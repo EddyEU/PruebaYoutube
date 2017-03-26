@@ -1,0 +1,49 @@
+﻿@model IEnumerable<AyD_P2.OPERACION>
+
+@{
+    ViewBag.Title = "Operaciones";
+
+    if (Session["codigo_usuario"] == null)
+    {
+        Response.Redirect("~/Account/Login");
+
+    }
+}
+
+<h2>Operaciones</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Tipo
+        </th>
+        <th>
+            Cuenta
+        </th>
+        <th>
+            Monto
+        </th>
+        <th>
+            Descripcion
+        </th>
+    </tr>
+
+@foreach (OPERACION item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.no_cuenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+    </tr>
+}
+
+</table>

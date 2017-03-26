@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    
+    if (Session["codigo_usuario"] == null)
+    {
+       Response.Redirect("~/Account/Login");
+
+    }
+}
+
+<div class="jumbotron">
+    <h1>FiusacBANK</h1>
+    <p class="lead">Bienvenido a nuestro banco, el banco de tu vida.</p> 
+
+    <h2>Hola @Session["usuario"]</h2>
+    <h2>Código de Usuario: @Session["codigo_usuario"] </h2>
+    <h2>Número de Cuenta: @Session["no_cuenta"] </h2>
+
+    <p><a href="https://portal.ingenieria.usac.edu.gt/" class="btn btn-primary btn-lg">PORTAL</a></p>
+</div>

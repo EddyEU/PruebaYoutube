@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.4
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyD_P3", "AyD_P2\AyD_P3.csproj", "{119E2D69-1C25-443E-867F-6A7987CE5490}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AyD_P3Tests", "AyD_P3Tests\AyD_P3Tests.csproj", "{E54AE6AF-9931-45EB-A814-8F10C3C57204}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{119E2D69-1C25-443E-867F-6A7987CE5490}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{119E2D69-1C25-443E-867F-6A7987CE5490}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{119E2D69-1C25-443E-867F-6A7987CE5490}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{119E2D69-1C25-443E-867F-6A7987CE5490}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E54AE6AF-9931-45EB-A814-8F10C3C57204}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E54AE6AF-9931-45EB-A814-8F10C3C57204}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E54AE6AF-9931-45EB-A814-8F10C3C57204}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E54AE6AF-9931-45EB-A814-8F10C3C57204}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
