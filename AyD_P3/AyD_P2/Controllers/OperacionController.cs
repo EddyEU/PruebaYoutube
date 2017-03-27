@@ -39,15 +39,6 @@ namespace AyD_P2.Controllers
 
             if (verificarSaldoCuentaCredito(cliente, modelo.Monto))
             {
-                //var db = new DefaultConnection(); 
-                _db.OPERACION.Add(new OPERACION
-                {
-                    tipo = modelo.Tipo,
-                    no_cuenta = modelo.Cuenta,
-                    monto = Decimal.Parse(modelo.Monto),
-                    descripcion = modelo.Descripcion,
-                    cod_usuario = cliente
-                });
 
                 var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
                 var saldofinal = cuenta.saldo - Decimal.Parse(modelo.Monto);
@@ -59,11 +50,20 @@ namespace AyD_P2.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Registro realizado");
                     cuenta.saldo = saldofinal;
+                    
+                    if (verificarInserciónServicio(modelo.Tipo, modelo.Cuenta, modelo.Monto, modelo.Descripcion, cliente))
+                    {
+                        ModelState.AddModelError("", "Registro realizado");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Registro no realizado");
+                    }
+
                 }
 
-                _db.SaveChanges();
+               
 
                 /*string query = "UPDATE CUENTA SET saldo = " + saldofinal + " WHERE cod_cliente = @p0";
                 await db.CUENTA.SqlQuery(query,cliente).SingleOrDefaultAsync();*/
@@ -74,6 +74,27 @@ namespace AyD_P2.Controllers
             }
 
             return View(modelo);
+        }
+
+        public bool verificarInserciónServicio(string tipo, string cuenta, string monto, string descripcion, int cliente)
+        {
+
+            _db.OPERACION.Add(new OPERACION
+            {
+                tipo = tipo,
+                no_cuenta = cuenta,
+                monto = Decimal.Parse(monto),
+                descripcion = descripcion,
+                cod_usuario = cliente
+            });
+
+            var status = _db.SaveChanges();
+
+            if (status != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
 
@@ -95,15 +116,7 @@ namespace AyD_P2.Controllers
             // agregarTransferencias();
             if (verificarSaldoCuentaCredito(cliente, modelo.Monto))
             {
-                _db.OPERACION.Add(new OPERACION
-                {
-                    tipo = "TRANSFERENCIA",
-                    no_cuenta = modelo.Cuenta,
-                    monto = Decimal.Parse(modelo.Monto),
-                    descripcion = modelo.Descripcion,
-                    cod_usuario = Int32.Parse(Session["codigo_usuario"].ToString())
-                });
-
+          
                 var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
                 var saldofinal = cuenta.saldo - Decimal.Parse(modelo.Monto);
 
@@ -113,11 +126,19 @@ namespace AyD_P2.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                {
-                    ModelState.AddModelError("", "Registro realizado");
+                {                 
                     cuenta.saldo = saldofinal;
+                    //correcta inserción
+                    if(verificarInserciónTransferencia(modelo.Cuenta, modelo.Monto, modelo.Descripcion, Session["codigo_usuario"].ToString()))
+                    {
+                        ModelState.AddModelError("", "Registro realizado");
+                    }
+                    else
+                    {
+                        ModelState.AddModelError("", "Registro no realizado");
+                    }
                 }
-                _db.SaveChanges();
+                
 
             }
             else
@@ -127,6 +148,27 @@ namespace AyD_P2.Controllers
 
 
             return View(modelo);
+        }
+
+        public bool verificarInserciónTransferencia(string cuenta, string monto, string descripcion, string cod_usuario)
+        {
+
+            _db.OPERACION.Add(new OPERACION
+            {
+                tipo = "TRANSFERENCIA",
+                no_cuenta = cuenta,
+                monto = Decimal.Parse(monto),
+                descripcion = descripcion,
+                cod_usuario = Int32.Parse(cod_usuario)
+            });
+
+            var status = _db.SaveChanges();
+
+            if (status != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         public ActionResult Consulta(Consulta modelo)

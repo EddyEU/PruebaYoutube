@@ -69,112 +69,39 @@ namespace AyD_P2.Controllers.Tests
             Assert.AreEqual(esperado, resultado);
         }
 
-        /*[TestMethod()]
-        public void devuelveSaldoTest()
+        [TestMethod()]
+        public void verificarInsercionTransferenciaTest()
         {
             OperacionController o = new OperacionController();
 
             bool esperado = true;
-            var resultado = o.devuelveSaldo(5, "");
+            var resultado = o.verificarInserciónTransferencia("11111", "2.00", "transferencia","1");
 
             Assert.AreEqual(esperado, resultado);
-        }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*
-        [TestMethod()]
-        public void IndexTest()
-        {
-            Assert.Fail();
         }
 
         [TestMethod()]
-        public void ServicioTest()
+        public void verificarInsercionServicioTest()
         {
-            Assert.Fail();
+            OperacionController o = new OperacionController();
+
+            bool esperado = true;
+            var resultado = o.verificarInserciónServicio("Luz","11111", "2.00", "Servicio", 1);
+
+            Assert.AreEqual(esperado, resultado);
         }
 
         [TestMethod()]
-        public void ServicioTest1()
+        public void verificarInsercionRegistroTest()
         {
-            Assert.Fail();
+            AccountController o = new AccountController();
+
+            bool esperado = true;
+            var resultado = o.verificarInserciónRegistro("d", "123123", 5);
+
+            Assert.AreEqual(esperado, resultado);
         }
 
-        [TestMethod()]
-        public void TransferenciaTest()
-        {
-            Assert.Fail();
-        }
 
-        [TestMethod()]
-        public void TransferenciaTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void ConsultaTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void CreditoTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void CreditoTest1()
-        {
-            Assert.Fail();
-        }
-        [TestMethod()]
-        public void DebitoTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void DebitoTest1()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void OperacionesTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void LogoutTest()
-        {
-            Assert.Fail();
-        }
-        
-
-        [TestMethod()]
-        public void agregaTransferenciaTest()
-        {
-            Assert.Fail();
-        }*/
     }
 }

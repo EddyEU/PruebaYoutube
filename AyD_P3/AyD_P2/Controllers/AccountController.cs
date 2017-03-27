@@ -17,6 +17,7 @@ namespace AyD_P2.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        ModeloDBEntities _db = new ModeloDBEntities();
 
         public AccountController()
         {
@@ -86,10 +87,8 @@ namespace AyD_P2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel modelo)
         {
-            using (ModeloDBEntities db = new ModeloDBEntities())
-            {
                 var usuarioprueba = Int32.Parse(modelo.CodigoUsuario);
-                var usuario = db.USUARIO.Where(x => x.cod_cliente == usuarioprueba && x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
+                var usuario = _db.USUARIO.Where(x => x.cod_cliente == usuarioprueba && x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
 
                 if (usuario == null )
                 {
@@ -97,7 +96,7 @@ namespace AyD_P2.Controllers
                     return View();
                 }else
                 {
-                    var cuenta = db.CUENTA.Where(x => x.cod_cliente == usuario.cod_cliente).FirstOrDefault();
+                    var cuenta = _db.CUENTA.Where(x => x.cod_cliente == usuario.cod_cliente).FirstOrDefault();
 
                     if (cuenta == null)
                     {
@@ -112,11 +111,11 @@ namespace AyD_P2.Controllers
                         Session["codigo_cliente"] = usuario.cod_cliente;
 
                         usuario.estado = "1";
-                        db.SaveChanges();
+                        _db.SaveChanges();
                         return RedirectToAction("Index", "Home");
                     }
                 }
-            }
+            
         }
 
         //------------------------------------------------------------------------------
@@ -126,22 +125,24 @@ namespace AyD_P2.Controllers
         {
             if (Session["codigo_usuario"] != null)
             {
-                using (ModeloDBEntities db = new ModeloDBEntities())
-                {
+               /* using (ModeloDBEntities db = new ModeloDBEntities())
+                {*/
                     var codigoUsuario = (int)Session["codigo_usuario"];
-                    var usuario = db.USUARIO.Where(x => x.cod_usuario == codigoUsuario).FirstOrDefault();
+                    var usuario = _db.USUARIO.Where(x => x.cod_usuario == codigoUsuario).FirstOrDefault();
 
                     if (usuario != null)
                     {
                         usuario.estado = "0";
-                        db.SaveChanges();
+                        _db.SaveChanges();
 
                         Session.Abandon();
                     }
-                }
+               // }
             }
             return View();
         }
+
+
         
         //------------------------------------------------------------------------------
         // POST: /Account/Register
@@ -150,10 +151,10 @@ namespace AyD_P2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(RegisterViewModel modelo)
         {
-            using (ModeloDBEntities db = new ModeloDBEntities())
-            {
+            /*using (ModeloDBEntities db = new ModeloDBEntities())
+            {*/
 
-                var cliente = db.CLIENTE.Where(x => x.nombre_cliente == modelo.Nombre && x.correo == modelo.Email).FirstOrDefault();
+                var cliente = _db.CLIENTE.Where(x => x.nombre_cliente == modelo.Nombre && x.correo == modelo.Email).FirstOrDefault();
 
                 if (cliente == null)  // cliente existe
                 {
@@ -161,24 +162,25 @@ namespace AyD_P2.Controllers
                 }
                 else
                 {
-                    var usuario = db.USUARIO.Where(x => x.usuario1 == modelo.Usuario).FirstOrDefault();
+                    var usuario = _db.USUARIO.Where(x => x.usuario1 == modelo.Usuario).FirstOrDefault();
 
                     if (usuario == null) //usuario no duplicado
                     {
-                        var codigoCliente = db.USUARIO.Where(x => x.cod_cliente == cliente.cod_cliente).FirstOrDefault();
+                        var codigoCliente = _db.USUARIO.Where(x => x.cod_cliente == cliente.cod_cliente).FirstOrDefault();
 
                         if (codigoCliente == null) //cliente ya tiene un usuario.
                         {
-                            db.USUARIO.Add(new USUARIO
-                            {
-                                usuario1 = modelo.Usuario,
-                                contrasenia = modelo.Password,
-                                estado = "0",
-                                cod_cliente = cliente.cod_cliente
-                            });
-                            db.SaveChanges();
 
-                            var usuario2 = db.USUARIO.Where(x => x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
+                            if (verificarInserciónRegistro(modelo.Usuario, modelo.Password, cliente.cod_cliente))
+                            {
+                                ModelState.AddModelError("", "Registro realizado");
+                            }
+                            else
+                            {
+                                ModelState.AddModelError("", "Registro no realizado");
+                            }
+
+                            var usuario2 = _db.USUARIO.Where(x => x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
                             //ModelState.AddModelError("", "Tu código de usuario es " + usuario2.cod_usuario);
                             ModelState.AddModelError("", "Tu código de usuario es " + cliente.cod_cliente);
                         }
@@ -193,12 +195,32 @@ namespace AyD_P2.Controllers
                         ModelState.AddModelError("", "Usuario ya existe");
                     }
                         
-                }
+                //}
                     
             }
             return View();
         }
-        
+
+        public bool verificarInserciónRegistro(string usuario, string password, int cod_cliente)
+        {
+
+            _db.USUARIO.Add(new USUARIO
+            {
+                usuario1 = usuario,
+                contrasenia = password,
+                estado = "0",
+                cod_cliente = cod_cliente
+            });
+
+            var status = _db.SaveChanges();
+
+            if (status != 0)
+            {
+                return true;
+            }
+            return false;
+        }
+
         #region Aplicaciones auxiliares
         // Se usa para la protección XSRF al agregar inicios de sesión externos
         private const string XsrfKey = "XsrfId";
