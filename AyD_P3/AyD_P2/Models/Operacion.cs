@@ -16,10 +16,13 @@ namespace AyD_P2.Models
         public string Tipo { get; set; }
 
         [Required]
+        [Range(0, int.MaxValue, ErrorMessage = "Ingrese número de cuenta válido")]
         [Display(Name = "Número de Cuenta")]
         public string Cuenta { get; set; }
 
         [Required]
+        [Range(0, double.MaxValue, ErrorMessage = "Ingrese monto válido")]
+        [StringLength(5, ErrorMessage = "El número de cuenta es de 5 dígitos", MinimumLength = 5)]
         [Display(Name = "Monto")]
         public string Monto { get; set; }
 

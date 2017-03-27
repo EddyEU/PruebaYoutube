@@ -247,7 +247,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
@@ -331,7 +331,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
@@ -341,10 +341,15 @@ namespace AyD_P2.Controllers
         // GET: Operaciones
         public ActionResult Operaciones()
         {
+            if (Session["codigo_usuario"] != null)
+            {
+                var cod_usuario = Int32.Parse(Session["codigo_usuario"].ToString());
+                return View(_db.OPERACION.ToList().Where(x => x.cod_usuario == cod_usuario));
+            }
             /*var listaOperaciones = _db.OPERACION.ToList();
             SelectList lista = new SelectList(listaOperaciones, "cod_operacion","tipo","no_cuenta","monto","descripcion");  
             ViewBag.listaOpera = lista;*/
-            
+
             return View(_db.OPERACION.ToList());
         }
 
@@ -372,7 +377,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
@@ -383,7 +388,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
