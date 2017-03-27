@@ -6,8 +6,6 @@ using System.ComponentModel.DataAnnotations;
 
 namespace AyD_P2.Models
 {
-    
-
     public class Operacion
     {
 
