@@ -17,7 +17,7 @@ namespace AyD_P2.Controllers
         {
             if (Session["codigo_usuario"] == null)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "Account");//:*
             }
             return View();
         }
@@ -72,7 +72,7 @@ namespace AyD_P2.Controllers
             {
                 ModelState.AddModelError("", "La cuenta no tiene fondos suficiente");
             }
-            
+
             return View(modelo);
         }
 
@@ -125,10 +125,10 @@ namespace AyD_P2.Controllers
                 ModelState.AddModelError("", "La cuenta no tiene fondos suficiente");
             }
 
-            
+
             return View(modelo);
         }
-        
+
         public ActionResult Consulta(Consulta modelo)
         {
             if (Session["codigo_usuario"] == null)
@@ -166,7 +166,7 @@ namespace AyD_P2.Controllers
                 saldo = cuenta.saldo.ToString();
                 return true;
             }
-            
+
         }
 
 
@@ -193,8 +193,9 @@ namespace AyD_P2.Controllers
             }
             else
             {
-                if (verificarSaldoCuentaCredito(cliente, modelo.Monto)) {
-                //inserta operacion realizada
+                if (verificarSaldoCuentaCredito(cliente, modelo.Monto))
+                {
+                    //inserta operacion realizada
                     _db.OPERACION.Add(new OPERACION
                     {
                         tipo = "CRÉDITO",
@@ -203,7 +204,7 @@ namespace AyD_P2.Controllers
                         descripcion = modelo.Descripcion,
                         cod_usuario = Int32.Parse(Session["codigo_usuario"].ToString())
                     });
-                
+
                     var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
                     var saldofinal = cuenta.saldo - Decimal.Parse(modelo.Monto);
                     var saldofinalCredito = cuentaCredito.saldo + Decimal.Parse(modelo.Monto);
@@ -222,12 +223,13 @@ namespace AyD_P2.Controllers
                         _db.SaveChanges();
                         ModelState.AddModelError("", "Registro realizado");
                     }
-                }else
+                }
+                else
                 {
                     ModelState.AddModelError("", "La cuenta no tiene fondos suficiente");
                 }
-               
-            }            
+
+            }
 
             return View(modelo);
         }
@@ -247,7 +249,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
@@ -261,7 +263,7 @@ namespace AyD_P2.Controllers
             {
                 return RedirectToAction("Login", "Account");
             }
-            
+
             return View();
         }
 
@@ -308,14 +310,15 @@ namespace AyD_P2.Controllers
                         _db.SaveChanges();
                         ModelState.AddModelError("", "Registro realizado");
                     }
-                }else
+                }
+                else
                 {
                     ModelState.AddModelError("", "La cuenta no tiene fondos suficiente");
                 }
             }
             return View(modelo);
         }
-  
+
         public bool verificarCuentaDebito(string cuenta)
         {
             var cuentaDebito = _db.CUENTA.Where(x => x.no_cuenta == cuenta).FirstOrDefault();
@@ -331,20 +334,25 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
             return false;
         }
-        
+
         // GET: Operaciones
         public ActionResult Operaciones()
         {
+            if (Session["codigo_usuario"] != null)
+            {
+                var cod_usuario = Int32.Parse(Session["codigo_usuario"].ToString());
+                return View(_db.OPERACION.ToList().Where(x => x.cod_usuario == cod_usuario));
+            }
             /*var listaOperaciones = _db.OPERACION.ToList();
             SelectList lista = new SelectList(listaOperaciones, "cod_operacion","tipo","no_cuenta","monto","descripcion");  
             ViewBag.listaOpera = lista;*/
-            
+
             return View(_db.OPERACION.ToList());
         }
 
@@ -364,7 +372,7 @@ namespace AyD_P2.Controllers
                     Session.Abandon();
                 }
             }
-            
+
             return RedirectToAction("Login", "Account");
         }
 
@@ -372,7 +380,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
@@ -383,7 +391,7 @@ namespace AyD_P2.Controllers
         {
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
-            if (cuenta.saldo >= Int32.Parse(monto))
+            if (cuenta.saldo >= Decimal.Parse(monto))
             {
                 return true;
             }
