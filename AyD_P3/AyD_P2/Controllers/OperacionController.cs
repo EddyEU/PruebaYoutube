@@ -17,7 +17,7 @@ namespace AyD_P2.Controllers
         {
             if (Session["codigo_usuario"] == null)
             {
-                return RedirectToAction("Login", "Account");
+                return RedirectToAction("Login", "Account");//:*
             }
             return View();
         }
