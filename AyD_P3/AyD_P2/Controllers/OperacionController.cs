@@ -349,9 +349,6 @@ namespace AyD_P2.Controllers
                 var cod_usuario = Int32.Parse(Session["codigo_usuario"].ToString());
                 return View(_db.OPERACION.ToList().Where(x => x.cod_usuario == cod_usuario));
             }
-            /*var listaOperaciones = _db.OPERACION.ToList();
-            SelectList lista = new SelectList(listaOperaciones, "cod_operacion","tipo","no_cuenta","monto","descripcion");  
-            ViewBag.listaOpera = lista;*/
 
             return View(_db.OPERACION.ToList());
         }
