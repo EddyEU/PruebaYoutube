@@ -396,13 +396,7 @@ namespace AyD_P2.Controllers
                 return true;
             }
             return false;
-
-            /*
-        tipo = "TRANSFERENCIA",
-                no_cuenta = modelo.Cuenta,
-                monto = Decimal.Parse(modelo.Monto),
-                descripcion = modelo.Descripcion,
-                cod_usuario = Int32.Parse(Session["codigo_usuario"].ToString())*/
+            
         }
 
     }
