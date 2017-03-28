@@ -143,7 +143,7 @@ namespace AyD_P2.Controllers.Tests
             AccountController o = new AccountController();
 
             bool esperado = true;
-            var resultado = o.existeUsuario(1,"nat", "123123");
+            var resultado = o.existeUsuario(1,"nataa", "123123");
 
             Assert.AreEqual(esperado, resultado);
         }
