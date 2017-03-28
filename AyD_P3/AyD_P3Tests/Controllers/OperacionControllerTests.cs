@@ -76,7 +76,7 @@ namespace AyD_P2.Controllers.Tests
             OperacionController o = new OperacionController();
 
             bool esperado = true;
-            var resultado = o.verificarInserciónTransferencia("11111", "x", "transferencia","1");
+            var resultado = o.verificarInserciónTransferencia("11111", "2.00", "transferencia","1");
 
             Assert.AreEqual(esperado, resultado);
         }

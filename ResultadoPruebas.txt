@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<TestRun id="930337b1-8fb3-4735-b201-0eb57ede8f9a" name="SYSTEM@NATTHALIEE 2017-03-27 19:40:44" runUser="NT AUTHORITY\SYSTEM" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
-  <TestSettings name="Configuración de pruebas predeterminada" id="b5527086-eb68-4b7e-839f-89ffcacdab78">
-    <Deployment userDeploymentRoot="C:\Jenkins\workspace\Practica3" useDefaultDeploymentRoot="false" runDeploymentRoot="SYSTEM_NATTHALIEE 2017-03-27 19_40_44" />
+<TestRun id="b6a5393e-b4a7-4286-ae24-609cc58c3f17" name="SYSTEM@NATTHALIEE 2017-03-27 19:50:13" runUser="NT AUTHORITY\SYSTEM" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Configuración de pruebas predeterminada" id="903744d0-f589-4701-87c5-f48114d42f00">
+    <Deployment userDeploymentRoot="C:\Jenkins\workspace\Practica3" useDefaultDeploymentRoot="false" runDeploymentRoot="SYSTEM_NATTHALIEE 2017-03-27 19_50_13" />
     <Execution>
       <TestTypeSpecific />
       <AgentRule name="Execution Agents">
@@ -9,65 +9,61 @@
     </Execution>
     <Properties />
   </TestSettings>
-  <Times creation="2017-03-27T19:40:44.5078119-06:00" queuing="2017-03-27T19:40:46.7240746-06:00" start="2017-03-27T19:40:46.8323673-06:00" finish="2017-03-27T19:40:52.4102878-06:00" />
+  <Times creation="2017-03-27T19:50:13.2041423-06:00" queuing="2017-03-27T19:50:14.0863938-06:00" start="2017-03-27T19:50:14.2443232-06:00" finish="2017-03-27T19:50:18.1950650-06:00" />
   <ResultSummary outcome="Failed">
-    <Counters total="12" executed="12" passed="10" error="0" failed="2" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Counters total="11" executed="11" passed="10" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
     <RunInfos>
-      <RunInfo computerName="NATTHALIEE" outcome="Warning" timestamp="2017-03-27T19:40:46.6528789-06:00">
+      <RunInfo computerName="NATTHALIEE" outcome="Warning" timestamp="2017-03-27T19:50:14.0372924-06:00">
         <Text>Advertencia: problema de implementación de serie de pruebas: no se encuentra el ensamblado o módulo 'WebGrease' al que hace referencia directa o indirectamente el contenedor de prueba 'c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll'.</Text>
       </RunInfo>
-      <RunInfo computerName="NATTHALIEE" outcome="Warning" timestamp="2017-03-27T19:40:46.6528789-06:00">
+      <RunInfo computerName="NATTHALIEE" outcome="Warning" timestamp="2017-03-27T19:50:14.0372924-06:00">
         <Text>Advertencia: problema de implementación de serie de pruebas: no se encuentra el ensamblado o módulo 'Microsoft.Owin.Security.OAuth' al que hace referencia directa o indirectamente el contenedor de prueba 'c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll'.</Text>
       </RunInfo>
     </RunInfos>
   </ResultSummary>
   <TestDefinitions>
     <UnitTest name="verificarSaldoTransferenciaTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="1b0f4c8c-a6ac-e430-c54f-2eeb6e60284a">
-      <Execution id="ae70ac69-0cc1-4677-b8d6-c6b4319a3a38" />
+      <Execution id="96572207-6c8d-474e-9630-7bb8c9a39fff" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarSaldoTransferenciaTest" />
     </UnitTest>
     <UnitTest name="verificarSaldoCuentaCreditoTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="3149cc1f-06d9-a3d0-c20e-072afe5e1bce">
-      <Execution id="9baba38b-7ea8-4629-8c54-2e1200d01147" />
+      <Execution id="687e00e6-b9a9-4237-a3fc-a7c8d35b72d4" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarSaldoCuentaCreditoTest" />
     </UnitTest>
     <UnitTest name="devuelveCodigoUsuarioTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="c4c02123-96b2-cd6d-f201-b6ecd5146fb2">
-      <Execution id="103a6112-3ebe-4fe6-90c9-e3e15e057fbe" />
+      <Execution id="4d883377-585b-43ff-b76e-88242d01b1be" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="devuelveCodigoUsuarioTest" />
     </UnitTest>
     <UnitTest name="verificarCuentaDebitoTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="3ac986fa-80b7-add9-a76d-4359cd0649b7">
-      <Execution id="d0d676c7-85b3-4176-9060-3ab10c47768e" />
+      <Execution id="ae5d3661-9b63-4874-834b-1187f37bc039" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarCuentaDebitoTest" />
     </UnitTest>
     <UnitTest name="verificarInsercionServicioTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="924e4a97-cbc2-beb3-cc08-06d31e1bd0ac">
-      <Execution id="e24a8d61-5a4b-446b-a2c6-3530b6fea00f" />
+      <Execution id="d48c767b-593d-4e75-8e86-14a7309ebd28" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarInsercionServicioTest" />
     </UnitTest>
     <UnitTest name="verificarInsercionTransferenciaTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="b957b40e-1113-82df-761d-3de905c79320">
-      <Execution id="bf9016b5-377f-412b-95fb-c31ac2c70b72" />
+      <Execution id="0b2f2515-ffe2-4663-9cf9-c752435c7c2b" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarInsercionTransferenciaTest" />
     </UnitTest>
     <UnitTest name="verificarSaldoCuentaDebitoTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="4a7c7f09-1ff1-4fb1-d408-93f800077bf1">
-      <Execution id="89252e74-f3e5-488c-b1f6-f788c9a4dab4" />
+      <Execution id="391a8056-7012-41cd-87ea-2a73c8610ff2" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarSaldoCuentaDebitoTest" />
     </UnitTest>
-    <UnitTest name="verificarInsercionRegistroTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="292c9e28-a8bd-6d5e-ec2c-870a65512bdb">
-      <Execution id="a2f22612-b443-42e8-b818-17c01435c83e" />
-      <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarInsercionRegistroTest" />
-    </UnitTest>
     <UnitTest name="verificarCuentaCreditoTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="6df394f6-02b3-228b-07ca-69a72e06a157">
-      <Execution id="a231df0b-1c16-4370-a97d-921778e95fda" />
+      <Execution id="342bd257-8ef5-4d01-ab73-c7569e077dea" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="verificarCuentaCreditoTest" />
     </UnitTest>
     <UnitTest name="existeSaldoTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="9bb1d94c-6f8d-2d0e-48df-b45b73507c86">
-      <Execution id="aab3fe7c-2d49-4352-9720-f960a490af02" />
+      <Execution id="36f01fc4-a30d-4267-8928-37a4c5e4ef11" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="existeSaldoTest" />
     </UnitTest>
     <UnitTest name="devuelveSaldoTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="8a2c9f50-0fa0-f759-2ff5-33f8981b1f89">
-      <Execution id="c73c0224-cdbb-4369-a141-18b3ec1e184e" />
+      <Execution id="a8b1c11e-007b-4470-aae2-8a74ace8c42b" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="devuelveSaldoTest" />
     </UnitTest>
     <UnitTest name="existeUsuarioTest" storage="c:\jenkins\workspace\practica3\ayd_p3\ayd_p3tests\bin\debug\ayd_p3tests.dll" id="2d8eb9a8-1e0f-e156-df28-72268bccd6c4">
-      <Execution id="e75abe0a-12e0-4a41-883d-b1e36afc0e64" />
+      <Execution id="8acdb775-526d-417c-9626-79cc6261aad1" />
       <TestMethod codeBase="C:/Jenkins/workspace/Practica3/AyD_P3/AyD_P3Tests/bin/Debug/AyD_P3Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="AyD_P2.Controllers.Tests.OperacionControllerTests, AyD_P3Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="existeUsuarioTest" />
     </UnitTest>
   </TestDefinitions>
@@ -76,101 +72,56 @@
     <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
   </TestLists>
   <TestEntries>
-    <TestEntry testId="c4c02123-96b2-cd6d-f201-b6ecd5146fb2" executionId="103a6112-3ebe-4fe6-90c9-e3e15e057fbe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="8a2c9f50-0fa0-f759-2ff5-33f8981b1f89" executionId="c73c0224-cdbb-4369-a141-18b3ec1e184e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="9bb1d94c-6f8d-2d0e-48df-b45b73507c86" executionId="aab3fe7c-2d49-4352-9720-f960a490af02" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="2d8eb9a8-1e0f-e156-df28-72268bccd6c4" executionId="e75abe0a-12e0-4a41-883d-b1e36afc0e64" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="6df394f6-02b3-228b-07ca-69a72e06a157" executionId="a231df0b-1c16-4370-a97d-921778e95fda" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="3ac986fa-80b7-add9-a76d-4359cd0649b7" executionId="d0d676c7-85b3-4176-9060-3ab10c47768e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="292c9e28-a8bd-6d5e-ec2c-870a65512bdb" executionId="a2f22612-b443-42e8-b818-17c01435c83e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="924e4a97-cbc2-beb3-cc08-06d31e1bd0ac" executionId="e24a8d61-5a4b-446b-a2c6-3530b6fea00f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="b957b40e-1113-82df-761d-3de905c79320" executionId="bf9016b5-377f-412b-95fb-c31ac2c70b72" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="3149cc1f-06d9-a3d0-c20e-072afe5e1bce" executionId="9baba38b-7ea8-4629-8c54-2e1200d01147" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="4a7c7f09-1ff1-4fb1-d408-93f800077bf1" executionId="89252e74-f3e5-488c-b1f6-f788c9a4dab4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
-    <TestEntry testId="1b0f4c8c-a6ac-e430-c54f-2eeb6e60284a" executionId="ae70ac69-0cc1-4677-b8d6-c6b4319a3a38" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="c4c02123-96b2-cd6d-f201-b6ecd5146fb2" executionId="4d883377-585b-43ff-b76e-88242d01b1be" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8a2c9f50-0fa0-f759-2ff5-33f8981b1f89" executionId="a8b1c11e-007b-4470-aae2-8a74ace8c42b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="9bb1d94c-6f8d-2d0e-48df-b45b73507c86" executionId="36f01fc4-a30d-4267-8928-37a4c5e4ef11" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2d8eb9a8-1e0f-e156-df28-72268bccd6c4" executionId="8acdb775-526d-417c-9626-79cc6261aad1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6df394f6-02b3-228b-07ca-69a72e06a157" executionId="342bd257-8ef5-4d01-ab73-c7569e077dea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ac986fa-80b7-add9-a76d-4359cd0649b7" executionId="ae5d3661-9b63-4874-834b-1187f37bc039" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="924e4a97-cbc2-beb3-cc08-06d31e1bd0ac" executionId="d48c767b-593d-4e75-8e86-14a7309ebd28" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b957b40e-1113-82df-761d-3de905c79320" executionId="0b2f2515-ffe2-4663-9cf9-c752435c7c2b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3149cc1f-06d9-a3d0-c20e-072afe5e1bce" executionId="687e00e6-b9a9-4237-a3fc-a7c8d35b72d4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4a7c7f09-1ff1-4fb1-d408-93f800077bf1" executionId="391a8056-7012-41cd-87ea-2a73c8610ff2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1b0f4c8c-a6ac-e430-c54f-2eeb6e60284a" executionId="96572207-6c8d-474e-9630-7bb8c9a39fff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
   </TestEntries>
   <Results>
-    <UnitTestResult executionId="103a6112-3ebe-4fe6-90c9-e3e15e057fbe" testId="c4c02123-96b2-cd6d-f201-b6ecd5146fb2" testName="devuelveCodigoUsuarioTest" computerName="NATTHALIEE" duration="00:00:01.2484293" startTime="2017-03-27T19:40:47.4489090-06:00" endTime="2017-03-27T19:40:50.2437299-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="103a6112-3ebe-4fe6-90c9-e3e15e057fbe">
+    <UnitTestResult executionId="4d883377-585b-43ff-b76e-88242d01b1be" testId="c4c02123-96b2-cd6d-f201-b6ecd5146fb2" testName="devuelveCodigoUsuarioTest" computerName="NATTHALIEE" duration="00:00:00.8295392" startTime="2017-03-27T19:50:14.6619329-06:00" endTime="2017-03-27T19:50:16.4268899-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4d883377-585b-43ff-b76e-88242d01b1be">
     </UnitTestResult>
-    <UnitTestResult executionId="c73c0224-cdbb-4369-a141-18b3ec1e184e" testId="8a2c9f50-0fa0-f759-2ff5-33f8981b1f89" testName="devuelveSaldoTest" computerName="NATTHALIEE" duration="00:00:00.0345742" startTime="2017-03-27T19:40:50.2487436-06:00" endTime="2017-03-27T19:40:50.2868461-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c73c0224-cdbb-4369-a141-18b3ec1e184e">
+    <UnitTestResult executionId="a8b1c11e-007b-4470-aae2-8a74ace8c42b" testId="8a2c9f50-0fa0-f759-2ff5-33f8981b1f89" testName="devuelveSaldoTest" computerName="NATTHALIEE" duration="00:00:00.0346109" startTime="2017-03-27T19:50:16.4319040-06:00" endTime="2017-03-27T19:50:16.4700053-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a8b1c11e-007b-4470-aae2-8a74ace8c42b">
       <Output>
         <StdOut>Hola</StdOut>
         <DebugTrace>Hola</DebugTrace>
       </Output>
     </UnitTestResult>
-    <UnitTestResult executionId="aab3fe7c-2d49-4352-9720-f960a490af02" testId="9bb1d94c-6f8d-2d0e-48df-b45b73507c86" testName="existeSaldoTest" computerName="NATTHALIEE" duration="00:00:00.0040458" startTime="2017-03-27T19:40:50.2918578-06:00" endTime="2017-03-27T19:40:50.2978746-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="aab3fe7c-2d49-4352-9720-f960a490af02">
+    <UnitTestResult executionId="36f01fc4-a30d-4267-8928-37a4c5e4ef11" testId="9bb1d94c-6f8d-2d0e-48df-b45b73507c86" testName="existeSaldoTest" computerName="NATTHALIEE" duration="00:00:00.0031130" startTime="2017-03-27T19:50:16.4750183-06:00" endTime="2017-03-27T19:50:16.4800320-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="36f01fc4-a30d-4267-8928-37a4c5e4ef11">
     </UnitTestResult>
-    <UnitTestResult executionId="e75abe0a-12e0-4a41-883d-b1e36afc0e64" testId="2d8eb9a8-1e0f-e156-df28-72268bccd6c4" testName="existeUsuarioTest" computerName="NATTHALIEE" duration="00:00:00.1153319" startTime="2017-03-27T19:40:50.3038902-06:00" endTime="2017-03-27T19:40:50.4208668-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e75abe0a-12e0-4a41-883d-b1e36afc0e64">
+    <UnitTestResult executionId="8acdb775-526d-417c-9626-79cc6261aad1" testId="2d8eb9a8-1e0f-e156-df28-72268bccd6c4" testName="existeUsuarioTest" computerName="NATTHALIEE" duration="00:00:00.0050611" startTime="2017-03-27T19:50:16.4840434-06:00" endTime="2017-03-27T19:50:16.4920640-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="8acdb775-526d-417c-9626-79cc6261aad1">
+    </UnitTestResult>
+    <UnitTestResult executionId="342bd257-8ef5-4d01-ab73-c7569e077dea" testId="6df394f6-02b3-228b-07ca-69a72e06a157" testName="verificarCuentaCreditoTest" computerName="NATTHALIEE" duration="00:00:00.0041686" startTime="2017-03-27T19:50:16.4975810-06:00" endTime="2017-03-27T19:50:16.5040995-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="342bd257-8ef5-4d01-ab73-c7569e077dea">
+    </UnitTestResult>
+    <UnitTestResult executionId="ae5d3661-9b63-4874-834b-1187f37bc039" testId="3ac986fa-80b7-add9-a76d-4359cd0649b7" testName="verificarCuentaDebitoTest" computerName="NATTHALIEE" duration="00:00:00.0027061" startTime="2017-03-27T19:50:16.5091117-06:00" endTime="2017-03-27T19:50:16.5141290-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae5d3661-9b63-4874-834b-1187f37bc039">
+    </UnitTestResult>
+    <UnitTestResult executionId="d48c767b-593d-4e75-8e86-14a7309ebd28" testId="924e4a97-cbc2-beb3-cc08-06d31e1bd0ac" testName="verificarInsercionServicioTest" computerName="NATTHALIEE" duration="00:00:00.0320272" startTime="2017-03-27T19:50:16.5201438-06:00" endTime="2017-03-27T19:50:16.5552371-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d48c767b-593d-4e75-8e86-14a7309ebd28">
+    </UnitTestResult>
+    <UnitTestResult executionId="0b2f2515-ffe2-4663-9cf9-c752435c7c2b" testId="b957b40e-1113-82df-761d-3de905c79320" testName="verificarInsercionTransferenciaTest" computerName="NATTHALIEE" duration="00:00:00.0349234" startTime="2017-03-27T19:50:16.5592478-06:00" endTime="2017-03-27T19:50:16.5978544-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0b2f2515-ffe2-4663-9cf9-c752435c7c2b">
       <Output>
         <ErrorInfo>
-          <Message>Error de Assert.AreEqual. Se esperaba &lt;True&gt;, pero es &lt;False&gt;. </Message>
-          <StackTrace>   en AyD_P2.Controllers.Tests.OperacionControllerTests.existeUsuarioTest() en C:\Jenkins\workspace\Practica3\AyD_P3\AyD_P3Tests\Controllers\OperacionControllerTests.cs:línea 148
+          <Message>El método de prueba AyD_P2.Controllers.Tests.OperacionControllerTests.verificarInsercionTransferenciaTest produjo la excepción: 
+System.FormatException: La cadena de entrada no tiene el formato correcto.</Message>
+          <StackTrace>    en System.Number.StringToNumber(String str, NumberStyles options, NumberBuffer&amp; number, NumberFormatInfo info, Boolean parseDecimal)
+   en System.Number.ParseDecimal(String value, NumberStyles options, NumberFormatInfo numfmt)
+   en System.Decimal.Parse(String s)
+   en AyD_P2.Controllers.OperacionController.verificarInserciónTransferencia(String cuenta, String monto, String descripcion, String cod_usuario) en C:\Jenkins\workspace\Practica3\AyD_P3\AyD_P2\Controllers\OperacionController.cs:línea 158
+   en AyD_P2.Controllers.Tests.OperacionControllerTests.verificarInsercionTransferenciaTest() en C:\Jenkins\workspace\Practica3\AyD_P3\AyD_P3Tests\Controllers\OperacionControllerTests.cs:línea 79
 </StackTrace>
         </ErrorInfo>
       </Output>
     </UnitTestResult>
-    <UnitTestResult executionId="a231df0b-1c16-4370-a97d-921778e95fda" testId="6df394f6-02b3-228b-07ca-69a72e06a157" testName="verificarCuentaCreditoTest" computerName="NATTHALIEE" duration="00:00:00.0046949" startTime="2017-03-27T19:40:50.4248759-06:00" endTime="2017-03-27T19:40:50.4334005-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a231df0b-1c16-4370-a97d-921778e95fda">
+    <UnitTestResult executionId="687e00e6-b9a9-4237-a3fc-a7c8d35b72d4" testId="3149cc1f-06d9-a3d0-c20e-072afe5e1bce" testName="verificarSaldoCuentaCreditoTest" computerName="NATTHALIEE" duration="00:00:00.0023802" startTime="2017-03-27T19:50:16.6018646-06:00" endTime="2017-03-27T19:50:16.6068784-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="687e00e6-b9a9-4237-a3fc-a7c8d35b72d4">
     </UnitTestResult>
-    <UnitTestResult executionId="d0d676c7-85b3-4176-9060-3ab10c47768e" testId="3ac986fa-80b7-add9-a76d-4359cd0649b7" testName="verificarCuentaDebitoTest" computerName="NATTHALIEE" duration="00:00:00.0023071" startTime="2017-03-27T19:40:50.4389152-06:00" endTime="2017-03-27T19:40:50.4439309-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d0d676c7-85b3-4176-9060-3ab10c47768e">
+    <UnitTestResult executionId="391a8056-7012-41cd-87ea-2a73c8610ff2" testId="4a7c7f09-1ff1-4fb1-d408-93f800077bf1" testName="verificarSaldoCuentaDebitoTest" computerName="NATTHALIEE" duration="00:00:00.0024019" startTime="2017-03-27T19:50:16.6108890-06:00" endTime="2017-03-27T19:50:16.6152323-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="391a8056-7012-41cd-87ea-2a73c8610ff2">
     </UnitTestResult>
-    <UnitTestResult executionId="a2f22612-b443-42e8-b818-17c01435c83e" testId="292c9e28-a8bd-6d5e-ec2c-870a65512bdb" testName="verificarInsercionRegistroTest" computerName="NATTHALIEE" duration="00:00:00.0942360" startTime="2017-03-27T19:40:50.4489446-06:00" endTime="2017-03-27T19:40:50.5462080-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a2f22612-b443-42e8-b818-17c01435c83e">
-      <Output>
-        <ErrorInfo>
-          <Message>El método de prueba AyD_P2.Controllers.Tests.OperacionControllerTests.verificarInsercionRegistroTest produjo la excepción: 
-System.Data.Entity.Infrastructure.DbUpdateException: An error occurred while updating the entries. See the inner exception for details. ---&gt; System.Data.Entity.Core.UpdateException: An error occurred while updating the entries. See the inner exception for details. ---&gt; System.Data.SqlClient.SqlException: Cannot insert duplicate key row in object 'dbo.USUARIO' with unique index 'USUARIO__IDX'. The duplicate key value is (d).
-The statement has been terminated.</Message>
-          <StackTrace>    en System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   en System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
-   en System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
-   en System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean&amp; dataReady)
-   en System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
-   en System.Data.SqlClient.SqlDataReader.get_MetaData()
-   en System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
-   en System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task&amp; task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
-   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task&amp; task, Boolean&amp; usedCache, Boolean asyncWrite, Boolean inRetry)
-   en System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
-   en System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
-   en System.Data.SqlClient.SqlCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
-   en System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.&lt;Reader&gt;b__c(DbCommand t, DbCommandInterceptionContext`1 c)
-   en System.Data.Entity.Infrastructure.Interception.InternalDispatcher`1.Dispatch[TTarget,TInterceptionContext,TResult](TTarget target, Func`3 operation, TInterceptionContext interceptionContext, Action`3 executing, Action`3 executed)
-   en System.Data.Entity.Infrastructure.Interception.DbCommandDispatcher.Reader(DbCommand command, DbCommandInterceptionContext interceptionContext)
-   en System.Data.Entity.Internal.InterceptableDbCommand.ExecuteDbDataReader(CommandBehavior behavior)
-   en System.Data.Common.DbCommand.ExecuteReader(CommandBehavior behavior)
-   en System.Data.Entity.Core.Mapping.Update.Internal.DynamicUpdateCommand.Execute(Dictionary`2 identifierValues, List`1 generatedValues)
-   en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
- --- Fin del seguimiento de la pila de la excepción interna ---
-    en System.Data.Entity.Core.Mapping.Update.Internal.UpdateTranslator.Update()
-   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.&lt;Update&gt;b__2(UpdateTranslator ut)
-   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update[T](T noChangesResult, Func`2 updateFunction)
-   en System.Data.Entity.Core.EntityClient.Internal.EntityAdapter.Update()
-   en System.Data.Entity.Core.Objects.ObjectContext.&lt;SaveChangesToStore&gt;b__35()
-   en System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
-   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesToStore(SaveOptions options, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction)
-   en System.Data.Entity.Core.Objects.ObjectContext.&lt;&gt;c__DisplayClass2a.&lt;SaveChangesInternal&gt;b__27()
-   en System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
-   en System.Data.Entity.Core.Objects.ObjectContext.SaveChangesInternal(SaveOptions options, Boolean executeInExistingTransaction)
-   en System.Data.Entity.Core.Objects.ObjectContext.SaveChanges(SaveOptions options)
-   en System.Data.Entity.Internal.InternalContext.SaveChanges()
- --- Fin del seguimiento de la pila de la excepción interna ---
-    en System.Data.Entity.Internal.InternalContext.SaveChanges()
-   en System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
-   en System.Data.Entity.DbContext.SaveChanges()
-   en AyD_P2.Controllers.AccountController.verificarInserciónRegistro(String usuario, String password, Int32 cod_cliente) en C:\Jenkins\workspace\Practica3\AyD_P3\AyD_P2\Controllers\AccountController.cs:línea 230
-   en AyD_P2.Controllers.Tests.OperacionControllerTests.verificarInsercionRegistroTest() en C:\Jenkins\workspace\Practica3\AyD_P3\AyD_P3Tests\Controllers\OperacionControllerTests.cs:línea 101
-</StackTrace>
-        </ErrorInfo>
-      </Output>
-    </UnitTestResult>
-    <UnitTestResult executionId="e24a8d61-5a4b-446b-a2c6-3530b6fea00f" testId="924e4a97-cbc2-beb3-cc08-06d31e1bd0ac" testName="verificarInsercionServicioTest" computerName="NATTHALIEE" duration="00:00:00.2119240" startTime="2017-03-27T19:40:50.5532270-06:00" endTime="2017-03-27T19:40:50.7674843-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e24a8d61-5a4b-446b-a2c6-3530b6fea00f">
-    </UnitTestResult>
-    <UnitTestResult executionId="bf9016b5-377f-412b-95fb-c31ac2c70b72" testId="b957b40e-1113-82df-761d-3de905c79320" testName="verificarInsercionTransferenciaTest" computerName="NATTHALIEE" duration="00:00:00.0036614" startTime="2017-03-27T19:40:50.7745042-06:00" endTime="2017-03-27T19:40:50.7825247-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bf9016b5-377f-412b-95fb-c31ac2c70b72">
-    </UnitTestResult>
-    <UnitTestResult executionId="9baba38b-7ea8-4629-8c54-2e1200d01147" testId="3149cc1f-06d9-a3d0-c20e-072afe5e1bce" testName="verificarSaldoCuentaCreditoTest" computerName="NATTHALIEE" duration="00:00:00.0033840" startTime="2017-03-27T19:40:50.7875384-06:00" endTime="2017-03-27T19:40:50.7935544-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="9baba38b-7ea8-4629-8c54-2e1200d01147">
-    </UnitTestResult>
-    <UnitTestResult executionId="89252e74-f3e5-488c-b1f6-f788c9a4dab4" testId="4a7c7f09-1ff1-4fb1-d408-93f800077bf1" testName="verificarSaldoCuentaDebitoTest" computerName="NATTHALIEE" duration="00:00:00.0022530" startTime="2017-03-27T19:40:50.7985674-06:00" endTime="2017-03-27T19:40:50.8035843-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="89252e74-f3e5-488c-b1f6-f788c9a4dab4">
-    </UnitTestResult>
-    <UnitTestResult executionId="ae70ac69-0cc1-4677-b8d6-c6b4319a3a38" testId="1b0f4c8c-a6ac-e430-c54f-2eeb6e60284a" testName="verificarSaldoTransferenciaTest" computerName="NATTHALIEE" duration="00:00:00.0036061" startTime="2017-03-27T19:40:50.8085940-06:00" endTime="2017-03-27T19:40:50.8146104-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ae70ac69-0cc1-4677-b8d6-c6b4319a3a38">
+    <UnitTestResult executionId="96572207-6c8d-474e-9630-7bb8c9a39fff" testId="1b0f4c8c-a6ac-e430-c54f-2eeb6e60284a" testName="verificarSaldoTransferenciaTest" computerName="NATTHALIEE" duration="00:00:00.0018405" startTime="2017-03-27T19:50:16.6192414-06:00" endTime="2017-03-27T19:50:16.6222498-06:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="96572207-6c8d-474e-9630-7bb8c9a39fff">
     </UnitTestResult>
   </Results>
 </TestRun>
