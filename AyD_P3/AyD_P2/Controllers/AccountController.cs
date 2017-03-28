@@ -121,6 +121,7 @@ namespace AyD_P2.Controllers
 
         public bool existeUsuario(int usuarioprueba, string usuario, string password)
         {
+            //usuario
             var usuario2 = _db.USUARIO.Where(x => x.cod_cliente == usuarioprueba && x.usuario1 == usuario && x.contrasenia == password).FirstOrDefault();
 
             //ModelState.AddModelError("", "Tu código de usuario es " + usuario2.cod_usuario);
@@ -159,8 +160,6 @@ namespace AyD_P2.Controllers
             return View();
         }
 
-
-        
         //------------------------------------------------------------------------------
         // POST: /Account/Register
         [HttpPost]
