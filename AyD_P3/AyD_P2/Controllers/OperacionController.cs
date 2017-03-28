@@ -38,7 +38,7 @@ namespace AyD_P2.Controllers
         {
             var cliente = Int32.Parse(Session["codigo_cliente"].ToString());
 
-            if (verificarSaldoCuentaCredito(cliente, modelo.Monto))
+            if (verificarSaldoCuentaCredito(cliente, modelo.Monto))//verifica saldoCuenta servicio
             {
 
                 var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
