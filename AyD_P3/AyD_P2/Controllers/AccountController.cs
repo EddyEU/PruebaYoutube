@@ -88,15 +88,16 @@ namespace AyD_P2.Controllers
         public ActionResult Login(LoginViewModel modelo)
         {
                 var usuarioprueba = Int32.Parse(modelo.CodigoUsuario);
-                var usuario = _db.USUARIO.Where(x => x.cod_cliente == usuarioprueba && x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
-
-                if (usuario == null )
+                
+                if (!existeUsuario(usuarioprueba, modelo.Usuario, modelo.Password))
                 {
                     ModelState.AddModelError("", "Intento de inicio de sesión no válido.");
                     return View();
                 }else
                 {
-                    var cuenta = _db.CUENTA.Where(x => x.cod_cliente == usuario.cod_cliente).FirstOrDefault();
+                var usuario = _db.USUARIO.Where(x => x.cod_cliente == usuarioprueba && x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
+
+                var cuenta = _db.CUENTA.Where(x => x.cod_cliente == usuario.cod_cliente).FirstOrDefault();
 
                     if (cuenta == null)
                     {
@@ -116,6 +117,22 @@ namespace AyD_P2.Controllers
                     }
                 }
             
+        }
+
+        public bool existeUsuario(int usuarioprueba, string usuario, string password)
+        {
+            var usuario2 = _db.USUARIO.Where(x => x.cod_cliente == usuarioprueba && x.usuario1 == usuario && x.contrasenia == password).FirstOrDefault();
+
+            //ModelState.AddModelError("", "Tu código de usuario es " + usuario2.cod_usuario);
+            if (usuario2 != null) //cliente ya tiene un usuario.
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
 
         //------------------------------------------------------------------------------
@@ -174,15 +191,14 @@ namespace AyD_P2.Controllers
                             if (verificarInserciónRegistro(modelo.Usuario, modelo.Password, cliente.cod_cliente))
                             {
                                 ModelState.AddModelError("", "Registro realizado");
+                                var codUsuario = retornarCodigoUsuario(modelo.Usuario, modelo.Password).ToString();
+                                ModelState.AddModelError("", "Tu código de usuario es " + codUsuario);
                             }
                             else
                             {
                                 ModelState.AddModelError("", "Registro no realizado");
                             }
-
-                            var usuario2 = _db.USUARIO.Where(x => x.usuario1 == modelo.Usuario && x.contrasenia == modelo.Password).FirstOrDefault();
-                            //ModelState.AddModelError("", "Tu código de usuario es " + usuario2.cod_usuario);
-                            ModelState.AddModelError("", "Tu código de usuario es " + cliente.cod_cliente);
+                           
                         }
                         else
                         {
@@ -220,6 +236,24 @@ namespace AyD_P2.Controllers
             }
             return false;
         }
+
+        public int retornarCodigoUsuario(string usuario, string password)
+        {
+
+            var usuario2 = _db.USUARIO.Where(x => x.usuario1 == usuario && x.contrasenia == password).FirstOrDefault();
+            //ModelState.AddModelError("", "Tu código de usuario es " + usuario2.cod_usuario);
+            if (usuario2 != null) //cliente ya tiene un usuario.
+            {
+                return usuario2.cod_cliente;
+            }
+            else
+            {
+                return -1;
+            }
+            
+        }
+
+        
 
         #region Aplicaciones auxiliares
         // Se usa para la protección XSRF al agregar inicios de sesión externos

@@ -114,6 +114,40 @@ namespace AyD_P2.Controllers.Tests
             Assert.AreEqual(saldo, resultado);
         }
 
+        [TestMethod()]
+        public void verificarSaldoTransferenciaTest()
+        {
+            OperacionController o = new OperacionController();
+
+            bool esperado = true;
+            var resultado = o.verificarSaldoTransferencia(1, "200");
+
+            Assert.AreEqual(esperado, resultado);
+        }
+
+        [TestMethod()]
+        public void devuelveCodigoUsuarioTest()
+        {
+            AccountController o = new AccountController();
+            var usuario = "nat";
+            var pass = "123123";
+            var codigo = (_db.USUARIO.Where(x => x.usuario1 == usuario && x.contrasenia == pass).FirstOrDefault()).cod_cliente;
+            var resultado = o.retornarCodigoUsuario(usuario, pass);
+
+            Assert.AreEqual(codigo, resultado);
+        }
+
+        [TestMethod()]
+        public void existeUsuarioTest()
+        {
+            AccountController o = new AccountController();
+
+            bool esperado = true;
+            var resultado = o.existeUsuario(1,"nat", "123123");
+
+            Assert.AreEqual(esperado, resultado);
+        }
+
 
     }
 }

@@ -115,7 +115,7 @@ namespace AyD_P2.Controllers
             var cliente = Int32.Parse(Session["codigo_cliente"].ToString());
 
             // agregarTransferencias();
-            if (verificarSaldoCuentaCredito(cliente, modelo.Monto))
+            if (verificarSaldoTransferencia(cliente, modelo.Monto))
             {
           
                 var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
@@ -127,7 +127,8 @@ namespace AyD_P2.Controllers
                     return RedirectToAction("Index", "Home");
                 }
                 else
-                {                 
+                {   
+                    
                     cuenta.saldo = saldofinal;
                     //correcta inserción
                     if(verificarInserciónTransferencia(modelo.Cuenta, modelo.Monto, modelo.Descripcion, Session["codigo_usuario"].ToString()))
@@ -172,6 +173,17 @@ namespace AyD_P2.Controllers
             return false;
         }
 
+        public bool verificarSaldoTransferencia(int cliente, string monto)
+        {
+            var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
+
+            if (cuenta.saldo >= Decimal.Parse(monto))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public ActionResult Consulta(Consulta modelo)
         {
             if (Session["codigo_usuario"] == null)
@@ -185,7 +197,7 @@ namespace AyD_P2.Controllers
 
             saldo = devuelveSaldo(cliente, saldo);
 
-            if (saldo != "")
+            if (saldo == "")
             {
                 ModelState.AddModelError("", "El usuario no tiene saldo vinculado");
             }
