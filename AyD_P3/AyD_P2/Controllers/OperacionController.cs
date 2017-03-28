@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using AyD_P2.Models;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace AyD_P2.Controllers
 {
@@ -182,31 +183,41 @@ namespace AyD_P2.Controllers
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
             string saldo = "";
 
-            if (!devuelveSaldo(cliente, saldo))
+            saldo = devuelveSaldo(cliente, saldo);
+
+            if (saldo != "")
             {
-                ModelState.AddModelError("", "El usuario no tiene una cuenta vinculada");
+                ModelState.AddModelError("", "El usuario no tiene saldo vinculado");
             }
             else
             {
-                modelo.saldo = cuenta.saldo.ToString();
+                modelo.saldo = saldo;
             }
 
             return View(modelo);
         }
+        
 
-        public bool devuelveSaldo(int cliente, string saldo)
+        public string devuelveSaldo(int cliente, string saldo)
         {
+            saldo = "";
             var cuenta = _db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault();
 
             if (cuenta == null)
             {
                 ModelState.AddModelError("", "El usuario no tiene una cuenta vinculada");
-                return false;
+                return saldo;
             }
             else
             {
-                saldo = cuenta.saldo.ToString();
-                return true;
+                if(saldo != null)
+                {
+                    saldo = cuenta.saldo.ToString();
+                    Console.WriteLine("Hola");
+                    Trace.Write("Hola");
+                }
+                
+                return saldo;
             }
 
         }

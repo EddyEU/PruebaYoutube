@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace AyD_P2.Controllers.Tests
 {
@@ -100,6 +101,17 @@ namespace AyD_P2.Controllers.Tests
             var resultado = o.verificarInserciónRegistro("d", "123123", 5);
 
             Assert.AreEqual(esperado, resultado);
+        }
+
+        [TestMethod()]
+        public void devuelveSaldoTest()
+        {
+            OperacionController o = new OperacionController();
+            var cliente = 1;
+            var saldo = (_db.CUENTA.Where(x => x.cod_cliente == cliente).FirstOrDefault()).saldo.ToString();
+            var resultado = o.devuelveSaldo(cliente, "0");
+
+            Assert.AreEqual(saldo, resultado);
         }
 
 
