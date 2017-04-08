@@ -21,7 +21,7 @@ namespace AyD_P2.Controllers.Tests
             OperacionController o = new OperacionController();
 
             bool esperado = true;
-            var resultado = o.existeSaldo(1, "100");
+            var resultado = o.existeSaldo(100, "100");
 
             Assert.AreEqual(esperado, resultado);
         }
