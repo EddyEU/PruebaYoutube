@@ -16,7 +16,7 @@ namespace AyD_P2.Controllers
 
         public ActionResult Index()
         {
-            //Validación si el usuario está deslogueado
+            //Validación si el usuario está deslogueado 123
             if (Session["codigo_usuario"] == null)
             {
                 return RedirectToAction("Login", "Account");
