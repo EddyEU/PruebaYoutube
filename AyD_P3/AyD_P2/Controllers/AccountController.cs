@@ -174,7 +174,7 @@ namespace AyD_P2.Controllers
 
                 if (cliente == null)  // cliente existe
                 {
-                    ModelState.AddModelError("", "El cliente no existe");
+                    ModelState.AddModelError("", "El cliente no existeeeeee");
                 }
                 else
                 {

@@ -8,6 +8,8 @@ namespace AyD_P2
     {
         public void Configuration(IAppBuilder app)
         {
+
+
             ConfigureAuth(app);
         }
     }
